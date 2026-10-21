@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Верификация документа — демо-прототип</title>
+<style>
+:root{--bg:#0b1210;--panel:#111c18;--line:#1f3a30;--text:#e6f0ea;--muted:#8fa89c;--ok:#22c55e;--acc:#7fd1a8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(1200px 600px at 50% -10%,#16322a 0,var(--bg) 60%) fixed;color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:0 16px 40px}
+.demo{width:100%;max-width:640px;margin:16px 0 0;background:#3a2f0b;border:1px solid #a8861c;color:#ffd866;padding:10px 14px;border-radius:10px;font-size:13px;text-align:center;letter-spacing:.3px}
+header{width:100%;max-width:640px;margin:24px 0 16px;text-align:center}
+header small{color:var(--acc);letter-spacing:3px;font-size:12px;text-transform:uppercase}
+header h1{font-size:22px;margin-top:8px;font-weight:600}
+.card{width:100%;max-width:640px;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.badge{display:flex;align-items:center;gap:14px;padding:18px 20px;background:linear-gradient(90deg,rgba(34,197,94,.18),rgba(34,197,94,.05));border-bottom:1px solid var(--line)}
+.badge .ic{width:44px;height:44px;border-radius:50%;background:var(--ok);display:grid;place-items:center;flex:none;box-shadow:0 0 0 6px rgba(34,197,94,.18);animation:pulse 2.4s infinite}
+.badge .ic svg{width:24px;height:24px}
+.badge b{display:block;color:var(--ok);font-size:16px}
+.badge span{color:var(--muted);font-size:13px}
+@keyframes pulse{50%{box-shadow:0 0 0 12px rgba(34,197,94,0)}}
+dl{padding:8px 20px 16px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border:0}
+dt{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.8px}
+dd{font-size:16px;line-height:1.4}
+.mono{font-family:ui-monospace,Menlo,Consolas,monospace;letter-spacing:1px}
+footer{max-width:640px;margin-top:20px;color:var(--muted);font-size:12px;text-align:center;line-height:1.6}
+@media(max-width:520px){.row{grid-template-columns:1fr;gap:4px}}
+</style>
+</head>
+<body>
+<div class="demo">⚠ ДЕМОНСТРАЦИОННЫЙ ПРОТОТИП · вымышленные данные · не является официальным сервисом</div>
+<header><small>Цифровой военный билет · концепт</small><h1>Проверка подлинности документа</h1></header>
+<main class="card">
+  <div class="badge">
+    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#06220f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <div><b>Статус: Документ верифицирован / Подлинный</b><span id="ts"></span></div>
+  </div>
+  <dl>
+    <div class="row"><dt>ФИО</dt><dd>Иванов Иван Иванович</dd></div>
+    <div class="row"><dt>Дата рождения</dt><dd>15.05.2003</dd></div>
+    <div class="row"><dt>Серия и номер</dt><dd class="mono">МБ-1234567</dd></div>
+    <div class="row"><dt>Статус</dt><dd>Прохождение службы / Военнообязанный</dd></div>
+    <div class="row"><dt>Воинская часть</dt><dd>В/Ч 3214, г. Минск</dd></div>
+    <div class="row"><dt>История службы / отметки</dt><dd>Прохождение срочной военной службы (2023–2024 гг.), ВУС-100868</dd></div>
+  </dl>
+</main>
+<footer>Прототип для инновационной конференции. Все данные демонстрационные.</footer>
+<script>document.getElementById('ts').textContent='Проверено: '+new Date().toLocaleString('ru-RU')</script>
+</body>
+</html>
